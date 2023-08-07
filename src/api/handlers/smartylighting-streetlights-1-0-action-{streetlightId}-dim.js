@@ -1,5 +1,10 @@
-
 const handler = module.exports = {};
+
+function sleep(ms) {
+  return new Promise((resolve, reject) => {
+    setTimeout(resolve, ms)
+  })
+}
 
 /**
  * 
@@ -10,5 +15,8 @@ const handler = module.exports = {};
  * @param {string} options.message.payload.sentAt - Date and time when the message was sent.
  */
 handler.dimLight = async ({message}) => {
-  // Implement your business logic here...
+  console.log(`[publisher route] publishing the message ${JSON.stringify(message.payload)} to streetlight ${message.params.streetlightId}`);
+  await sleep(10000);
+  console.log("sleep-completed");
+  // message will be sent post this
 };

@@ -45,3 +45,10 @@ app
     });
   })
   .catch(console.error);
+
+(function MyLoop(i) {
+  setTimeout(() => {
+    app.send({percentage: 1}, {}, "smartylighting/streetlights/1/0/action/69/dim");
+    if(--i) MyLoop(i);
+  }, 1000);
+}(3));

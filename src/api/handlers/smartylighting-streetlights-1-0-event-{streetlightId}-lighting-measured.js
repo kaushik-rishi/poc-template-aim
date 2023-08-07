@@ -1,4 +1,3 @@
-
 const handler = module.exports = {};
 
 /**
@@ -11,4 +10,6 @@ const handler = module.exports = {};
  */
 handler.receiveLightMeasurement = async ({message}) => {
   // Implement your business logic here...
+  console.log("[IN] handler");
+  console.log("recieved light measurement ! ", message.payload);
 };
